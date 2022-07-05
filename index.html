@@ -20,7 +20,7 @@
             console.log(statementStr);
             //获取参数
             var parametersStartIndex = textVa.indexOf('Parameters: ');
-            var parametersEndIndex = textVa.length - 1;
+            var parametersEndIndex = textVa.length;
             for (var i = parametersStartIndex; i < textVa.length; i++) {
                 if (textVa[i] == "\n") {
                     parametersEndIndex = i;
