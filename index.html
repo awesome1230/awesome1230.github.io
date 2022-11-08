@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入Vue -->
+    <script src="./elementUI/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./elementUI/index.css">
+    <!-- 引入组件库 -->
+    <script src="./elementUI/index.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <a>1</a>
+    <div id="app">
+        <el-table :data="tableData" style="width: 100%">
+            <el-table-column prop="url" label="列表项">
+                <template slot-scope="scope">
+                    <el-link type="primary" :href="scope.row.url" target="_blank">{{scope.row.name}}</el-link>
+                </template>
+            </el-table-column>
+        </el-table>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                tableData: [
+                    {
+                        name: 'Mybatis解析工具',
+                        url: './html/mybatis_analysis.html'
+                    }, {
+                        name:'设计模式',
+                        url:'./html/gof/design_patterns.html'
+                    }
+                ]
+            }
+        })
+    </script>
 </body>
+
 </html>
